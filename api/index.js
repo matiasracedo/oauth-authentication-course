@@ -1,8 +1,10 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const cors = require('cors')
 const { config } = require('./config');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.post("/api/auth/token", function(req, res) {
